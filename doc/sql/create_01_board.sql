@@ -115,8 +115,18 @@ VALUES(
 	,NOW()
 );
 
-SELECT * 
-FROM board_info;
+
+SELECT 
+	 board_no
+	,board_title
+	,board_write_date
+FROM 
+ board_info
+WHERE 
+ board_del_flg  = 'o'
+ORDER BY 
+ board_no ASC 
+LIMIT 5 OFFSET 0
+;
 
 COMMIT;
-
