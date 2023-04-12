@@ -46,18 +46,47 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-	<link rel='stylesheet' href='mini_board\src\css\common.css'>
+	<link rel='stylesheet' href='../src/css/common.css'>
 	<title>게시판</title>
-</head>
+
+<!-- </head>mini_board\src\css\common.css -->
+
 <body>
+
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">로스트아크 인벤</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">EVENT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">자유게시판</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">직업게시판</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">질문과 답변</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-	<div class='div_base'>
+	
+	<div class="p-3 mb-2 bg-success text-white">
 		<table class='table table-striped'>
 			<thead>
-				<tr class='board_tr'>
-					<th>게시글 번호</th>
-					<th>게시글 제목</th>
-					<th>작성일자</th>
+				<tr>
+					<th class="p-3 mb-2 bg-success text-white">게시글 번호</th>
+					<th class="p-3 mb-2 bg-success text-white">게시글 제목</th>
+					<th class="p-3 mb-2 bg-success text-white">작성일자</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -66,9 +95,9 @@
 					{
 				?>
 						<tr>
-							<td><?php echo $recode["board_no"] ?></td>
-							<td><a href="board_detail.php?board_no=<?php echo $recode["board_no"] ?>"><?php echo $recode["board_title"] ?></a></td>
-							<td><?php echo $recode["board_write_date"] ?></td>
+							<td  class="p-3 mb-2 bg-light text-dark"><?php echo $recode["board_no"] ?></td>
+							<td  class="p-3 mb-2 bg-light text-dark"><a href="board_detail.php?board_no=<?php echo $recode["board_no"] ?>"><?php echo $recode["board_title"] ?></a></td>
+							<td  class="p-3 mb-2 bg-light text-dark"><?php echo $recode["board_write_date"] ?></td>
 						</tr> 
 				<?php
 					}
@@ -87,6 +116,6 @@
 			}
 		?>
 	</div>
-			
+
 </body>
 </html>
