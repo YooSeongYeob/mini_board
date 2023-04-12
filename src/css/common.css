@@ -1,0 +1,9 @@
+* {
+	margin: 0;
+	text-align: center;
+}
+
+.div_base {
+	width: 80%;
+	display: inline-block;
+}
