@@ -1,6 +1,8 @@
 * {
-	margin: 0;
+	margin: auto;
 	text-align: center;
+	border-style: dotted;
+	border-color: darkred;
 }
 
 .div_base {

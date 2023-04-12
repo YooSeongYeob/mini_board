@@ -29,9 +29,14 @@
 		
 		// update
 		$result_cnt = update_board_info_no( $arr_info );
-
+		
 		// select
-		$result_info = select_board_info_no( $arr_post["board_no"] );
+		// $result_info = select_board_info_no( $arr_post["board_no"] ); // 0412 del
+		
+		header( "Location: board_detail.php?board_no=".$arr_post["board_no"] );
+		exit(); // 해당 행에서 redirect 했기 때문에 이후의 소스코드는 실행할 필요가 없다. 
+		// exit 밑으로는 실행 안 함 이 밑의 코드는 실행이 안 됨 다른 화면으로 넘어갈 거기 때문임.
+		// 리다이렉트 방법 여러가지 있음 그 중 하나가 헤더 
 	}
 ?>
 
@@ -46,10 +51,10 @@
 	<title>게시판</title>
 </head>
 <body>
-<<<<<<< HEAD
-=======
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
->>>>>>> d98886da040073ba7235be5c5a467c48e3a69da0
+
 	<form method="post" action="board_update.php">
 		<label  for="bno">게시글 번호 : </label>
 		<input type="text" name="board_no" id="bno" value="<?php echo $result_info["board_no"] ?>" readonly>
@@ -60,8 +65,12 @@
 		<label  for="contents">게시글 내용 : </label>
 		<input type="text" name="board_contents" id="contents" value="<?php echo $result_info["board_contents"] ?>">
 		<br>
-		<button type="submit">수정</button>
+		<button type="submit" class="btn btn-success">수정</button>
+		<button type="button" class="btn btn-success"><a href= "board_detail.php?board_no=<?php echo $result_info["board_no"] ?>">
+		취소
+		</a>
+		</button>
 	</form>
-
+	<button type="button" class="btn btn-danger"><a href= "board_list.php">목록</a></button>
 </body>
 </html>
