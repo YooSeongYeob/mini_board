@@ -1,13 +1,12 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> d98886da040073ba7235be5c5a467c48e3a69da0
+
+
+
 <?php
 	define( "SRC_ROOT", $_SERVER["DOCUMENT_ROOT"]."/mini_board/src/" );
 	define( "URL_DB", SRC_ROOT."common/db_common.php" );
 	include_once( URL_DB );
-<<<<<<< HEAD
-=======
+
+
 
 	// GET 체크
 	if( array_key_exists( "page_num", $_GET ) )
@@ -97,7 +96,7 @@
         include_once( URL_DB );
         // $http_method = $_SERVER["REQUEST_METHOD"];
         // $http_method === "GET"
->>>>>>> d98886da040073ba7235be5c5a467c48e3a69da0
+
 
 	// GET 체크
 	if( array_key_exists( "page_num", $_GET ) )
@@ -117,7 +116,6 @@
 	// max page number
 	$max_page_num = ceil( (int)$result_cnt[0]["cnt"] / $limit_num );
 
-<<<<<<< HEAD
 	// offset
 	$offset = ( $page_num * $limit_num ) - $limit_num;
 
@@ -181,7 +179,7 @@
 
 </body>
 </html>
-=======
+
         // 1페이지일 때 0, 2페이지일 때 5, 3페이지일 때 10 ... 
       
         // offset 계산
@@ -257,5 +255,3 @@
         ?>       
     </body>
     </html>
->>>>>>> cc3d26535f8ad14882e76874de674df422e50be2
->>>>>>> d98886da040073ba7235be5c5a467c48e3a69da0

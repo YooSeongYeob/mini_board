@@ -1,7 +1,4 @@
 <?php
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 
 // ---------------------------------
 // 함수명	: db_conn
@@ -212,7 +209,7 @@ function update_board_info_no( &$param_arr )
 
 	return $result_cnt;
 }
-=======
+
     function db_conn( &$param_conn )
     {
         $host = "localhost";
@@ -227,7 +224,6 @@ function update_board_info_no( &$param_arr )
                 ,PDO::ATTR_ERRMODE              => PDO::ERRMODE_EXCEPTION
                 ,PDO::ATTR_DEFAULT_FETCH_MODE   => PDO::FETCH_ASSOC
             );
->>>>>>> d98886da040073ba7235be5c5a467c48e3a69da0
 
 // ---------------------------------
 // 함수명	: db_conn
@@ -348,7 +344,6 @@ function select_board_info_cnt()
 }
 
 
-<<<<<<< HEAD
 // ---------------------------------
 // 함수명	: select_board_info_no
 // 기능		: 게시판 특정 게시글 정보 검색
@@ -439,7 +434,7 @@ function update_board_info_no( &$param_arr )
 
 	return $result_cnt;
 }
-=======
+
 // TODO : test start 할 게 남았을 때 남기는 코멘트
 $arr=
     array(
@@ -451,5 +446,3 @@ $result = select_board_info_paging($arr);
 // print_r($result);
 // TODO : test End
 ?>
->>>>>>> cc3d26535f8ad14882e76874de674df422e50be2
->>>>>>> d98886da040073ba7235be5c5a467c48e3a69da0
