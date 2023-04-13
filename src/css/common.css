@@ -1,19 +1,34 @@
 * {
 	margin: auto;
 	text-align: center;
+
 }
 
 .div_base {
-	width: 100%;
+	
 	display: inline-block;
 }
 
-.navbar-brand {
-	width: 90%;
-	background-color: rgba(32, 194, 62, 0.808);
-	display:inline-block;
-	font-weight: 700;
-	color: aliceblue;
+.button_a {
+	text-decoration: none;
+	color:brown;
+	line-height: 50px;
+
 }
 
 
+.navbar-brand {
+	font-weight: 900;
+	font-size: 25px;
+	color: rgba(44, 44, 44, 0.911);
+	position: absolute;
+	top: 33px;
+	left: 30px;
+	font-size: 28px;
+	font-style:oblique;
+	
+}
+
+
+
+/* 검색 기능도 오후에 추가 */	

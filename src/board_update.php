@@ -1,6 +1,7 @@
 <?php
 	define( "SRC_ROOT", $_SERVER["DOCUMENT_ROOT"]."/mini_board/src/" );
 	define( "URL_DB", SRC_ROOT."common/db_common.php" );
+	define( "URL_HEADER", SRC_ROOT."board_header.php" );
 	include_once( URL_DB );
 	
 	// Request Method를 획득
@@ -51,7 +52,7 @@
 	<title>게시판</title>
 </head>
 <body>
-
+<?php include_once( URL_HEADER ); ?>
 	<form method="post" action="board_update.php">
 		<label class="p-3 mb-2 bg-success text-white"  for="bno">게시글 번호 : </label>
 		<input type="text" name="board_no" id="bno" value="<?php echo $result_info["board_no"] ?>" readonly>

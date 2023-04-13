@@ -1,9 +1,8 @@
 
-
-
 <?php
 	define( "SRC_ROOT", $_SERVER["DOCUMENT_ROOT"]."/mini_board/src/" );
 	define( "URL_DB", SRC_ROOT."common/db_common.php" );
+	define( "URL_HEADER", SRC_ROOT."board_header.php" );
 	include_once( URL_DB );
 
  	// 상수를 여러 개 넣으면 에러가 난다.
@@ -19,7 +18,7 @@
 	}
 
 	$limit_num = 5;
-
+	
 	// 게시판 정보 테이블 전체 카운트 획득
 	$result_cnt = select_board_info_cnt();
 
@@ -52,31 +51,41 @@
 <!-- </head>mini_board\src\css\common.css -->
 
 <body>
+<?php include_once( URL_HEADER ); ?>
+	
 
-<nav class="navbar navbar-expand-lg bg-light">
+ <nav class="navbar navbar-expand-lg bg-light">
+
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">로스트아크 인벤</a>
+    <a class="navbar-brand" href="#">LOST ARK</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+	
+	<p class="ppp"> 
+	<button type="button"><a href="board_insert.php">게시글 작성<button>	
+	</p>
+
+
+    <div class="collapse navbar-collapse" class= "nav-items" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">EVENT</a>
+          <a class="nav-link active" aria-current="page" href="#">자유게시판</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">자유게시판</a>
+          <a class="nav-link active" href="#">직업게시판</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">직업게시판</a>
+          <a class="nav-link active" href="#">EVENT</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled">질문과 답변</a>
+          <a class="nav-link active"  href="#">질문과 답변</a>
         </li>
       </ul>
     </div>
-  </div>
-</nav>
+ </div>  
+
+</nav> 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 	
@@ -84,9 +93,9 @@
 		<table class='table table-striped'>
 			<thead>
 				<tr>
-					<th class="p-3 mb-2 bg-success text-white">게시글 번호</th>
-					<th class="p-3 mb-2 bg-success text-white">게시글 제목</th>
-					<th class="p-3 mb-2 bg-success text-white">작성일자</th>
+					<th  class="text-bg-dark p-3">게시글 번호</th>
+					<th  class="text-bg-dark p-3">게시글 제목</th>
+					<th  class="text-bg-dark p-3">작성일자</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -95,9 +104,9 @@
 					{
 				?>
 						<tr>
-							<td  class="p-3 mb-2 bg-light text-dark"><?php echo $recode["board_no"] ?></td>
-							<td  class="p-3 mb-2 bg-light text-dark"><a href="board_detail.php?board_no=<?php echo $recode["board_no"] ?>"><?php echo $recode["board_title"] ?></a></td>
-							<td  class="p-3 mb-2 bg-light text-dark"><?php echo $recode["board_write_date"] ?></td>
+							<td  class="text-bg-light p-3"><?php echo $recode["board_no"] ?></td>
+							<td  class="text-bg-light p-3"><a href="board_detail.php?board_no=<?php echo $recode["board_no"] ?>"><?php echo $recode["board_title"] ?></a></td>
+							<td  class="text-bg-light p-3"><?php echo $recode["board_write_date"] ?></td>
 						</tr> 
 				<?php
 					}
@@ -105,7 +114,8 @@
 			</tbody>
 		</table>
 	</div>
-	<div>
+
+<div>
 		<!-- 페이징 번호 -->
 		<?php
 			for( $i = 1; $i <= $max_page_num; $i++ )
@@ -115,7 +125,7 @@
 		<?php
 			}
 		?>
-	</div>
+</div>
 
 </body>
 </html>

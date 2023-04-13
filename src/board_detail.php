@@ -5,7 +5,8 @@
     // 디테일과 업데이트를 따로따로 만들 수도 있음.
     define( "SRC_ROOT", $_SERVER["DOCUMENT_ROOT"]."/mini_board/src/" );
 	define( "URL_DB", SRC_ROOT."common/db_common.php" );
-	include_once( URL_DB );
+	define( "URL_HEADER", SRC_ROOT."board_header.php" );
+    include_once( URL_DB );
 
     // Request Parameter 획득(GET)
     $arr_get = $_GET; // 겟 파라미터를 담아서 언더바 겟을 쓰기가 바로 쓰기
@@ -27,6 +28,7 @@
     <title>Detail</title>
 </head>
 <body>
+<?php include_once( URL_HEADER ); ?>
     <div class="p-3 mb-2 bg-success text-white">
         <p>게시글 번호 :   <?php echo $result_info["board_no"]?></p>
         <p>게시글 작성일 : <?php echo $result_info["board_write_date"]?></p>

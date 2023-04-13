@@ -1,5 +1,6 @@
 <?php
-
+// pdo를 이용해서 데이터베이스를 연결 mysql로도 사용 가능은 한데 
+// 연습했던 것과는 다른 방향이라 비추천 한다고 하심.
 // ---------------------------------
 // 함수명	: db_conn
 // 기능		: DB Connection
@@ -255,4 +256,63 @@ function delete_board_info_no(&$param_no)
 		}
 		
 		return $result_cnt;
-}
+	}
+// ---------------------------------
+// 함수명	: insert_board_info
+// 기능		: 게시글 생성
+// 파라미터	: Array		&$param_arr
+// 리턴값	: INT/STRING	$result_cnt/ERRMSG // 앞에는 정상 뒤에는 에러메시지
+// ---------------------------------
+function insert_board_info(&$param_arr)
+  {
+	$sql = 
+	 " INSERT INTO board_info("
+	."  board_title "
+	." ,board_contents " 
+	." ,board_write_date "
+	. " ) "
+	." VALUES ( "
+	."  :board_title "
+	." ,:board_contents " // 프리퀄렉션?으로 작성할거기 떄문에 콜론
+	." ,NOW() " // MARIADB가 가지고 있는 함수 php가 가지고 있는 게 아니다.
+	." ) "
+	;
+
+	$arr_prepare =
+		array(
+			":board_title" => $param_arr["board_title"]
+			,":board_contents" => $param_arr["board_contents"]
+		);
+
+		// function의 로직 흐름.
+		// db 연결 트랜잭션 시작하고 스테이트먼트 만들고 쿼리를 데이터베이스에 리퀘스트 하고 정상이면 커밋 비정상이면 롤백
+		// 마지막으로 정상일 때는 리턴 에러면 에러메시지 리턴 (순서)
+		
+		$conn = null; // PDO를 오픈 // 얘가 본체임
+		try
+		{
+			db_conn( $conn ); // PDO object set(DB연결)
+			$conn->beginTransaction(); // Transaction 시작 // 데이터 변경할 때 데이터가 이상해지지 않게 제어
+			$stmt = $conn->prepare( $sql ); // statement object set
+			$stmt->execute( $arr_prepare ); // DB request
+			$result_cnt = $stmt->rowCount(); // query 적용 recode 갯수
+			$conn->commit(); // 정상작동하면 커밋
+		}
+		catch( Exception $e )
+		{
+			$conn->rollback(); // 에러 발생시 롤백
+			return $e->getMessage(); // 이 에러 메시지를 리턴해줘서 호출한 쪽에서 알 수 있도록 해주기
+		}
+		finally
+		{
+			$conn = null; // PDO 파기
+		}
+		
+		return $result_cnt;
+	}
+
+
+	// TODO 
+	// $arr = array("board_title" => "test", "board_contents" => "test contents");
+	// echo insert_board_info( $arr );
+	//TODO
