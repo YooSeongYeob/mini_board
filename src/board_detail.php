@@ -29,19 +29,19 @@
 </head>
 <body>
 <?php include_once( URL_HEADER ); ?>
-    <div class="p-3 mb-2 bg-success text-white">
-        <p>게시글 번호 :   <?php echo $result_info["board_no"]?></p>
-        <p>게시글 작성일 : <?php echo $result_info["board_write_date"]?></p>
-        <p>게시글 제목 :   <?php echo $result_info["board_title"]?></p>
-        <p>게시글 내용 :   <?php echo $result_info["board_contents"]?></p>
+    <div class="p-3 mb-2 bg-light text-dark">
+        <p class= "neko4">게시글 번호 :   <?php echo $result_info["board_no"]?></p>
+        <p class= "neko3">게시글 작성일 : <?php echo $result_info["board_write_date"]?></p>
+        <p class= "neko2">게시글 제목 :   <?php echo $result_info["board_title"]?></p>
+        <p class= "neko"> 내용 :      <?php echo $result_info["board_contents"]?></p>
     </div>
 
-    <button type="button"><a href="board_update.php?board_no= <?php echo $result_info["board_no"]?>" >
+    <button type="button" class="btn btn-outline-warning"><a href="board_update.php?board_no= <?php echo $result_info["board_no"]?>" >
     수정
     </a>
     </button>
     
-    <button type="button">
+    <button type="button" class="btn btn-outline-warning">
     <a href="board_delete.php?board_no=<?php echo $result_info["board_no"]?>">
     삭제
     </a>

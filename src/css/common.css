@@ -5,15 +5,14 @@
 }
 
 .div_base {
-	
 	display: inline-block;
 }
 
 .button_a {
 	text-decoration: none;
 	color:brown;
-	line-height: 50px;
-
+	line-height: 100px;
+	font-weight: 900;
 }
 
 
@@ -22,13 +21,240 @@
 	font-size: 25px;
 	color: rgba(44, 44, 44, 0.911);
 	position: absolute;
-	top: 33px;
-	left: 30px;
+	top: 10px;
+	left: 50px;
 	font-size: 28px;
 	font-style:oblique;
 	
 }
 
 
+#navbarNav {
+	position: relative;
+}
 
-/* 검색 기능도 오후에 추가 */	
+nav{
+	border-style: solid;
+}
+
+.d-flex{
+	position: relative;
+	left: 270px;
+}	
+
+#text_board{
+	line-height: 75px;
+	border-top-width: thin;
+    border-bottom-width: thick;
+    border-left-width: 10px;
+    border-right-width: medium;
+    border-radius: 2px;
+}
+
+#text_nav{
+	line-height: 50px;
+	border-style: solid;
+	
+}
+
+.neko{
+	line-height: 500px;
+	border-style: solid;
+	border-color: rgb(218, 184, 142);
+	border-top-width: thin;
+    border-bottom-width: thick;
+    border-left-width: 10px;
+    border-right-width: medium;
+    border-radius: 2px;
+	
+}
+
+.neko2{
+	line-height: 50px;
+	border-style: solid;
+	border-color: rgb(218, 184, 142);
+    border-top-width: thin;
+    border-bottom-width: thick;
+    border-left-width: 10px;
+    border-right-width: medium;
+    border-radius: 2px;
+}
+
+
+.neko3{
+	line-height: 50px;
+	border-style: solid;
+	border-color: rgb(218, 184, 142);
+	border-top-width: thin;
+    border-bottom-width: thick;
+    border-left-width: 10px;
+    border-right-width: medium;
+    border-radius: 2px;
+}
+
+
+.neko4{
+	line-height: 20px;
+	border-style: solid;
+	border-color: rgb(218, 184, 142);
+	border-top-width: thin;
+    border-bottom-width: thick;
+    border-left-width: 10px;
+    border-right-width: medium;
+    border-radius: 2px;
+}
+
+#neko{
+	line-height: 10px;
+	border-style: solid;
+	display: block;
+	margin-top:5px;
+	position: relative;
+	width:100%;
+	border-color: rgb(218, 184, 142);
+	border-top-width: thin;
+    border-bottom-width: thick;
+    border-left-width: 10px;
+    border-right-width: medium;
+    border-radius: 2px;
+}
+
+#neko2{
+	line-height: 50px;
+	border-style: solid;
+	display: block;
+	margin-top:5px;
+	position: relative;
+	width:100%;
+	border-color: rgb(218, 184, 142);
+	border-top-width: thin;
+    border-bottom-width: thick;
+    border-left-width: 10px;
+    border-right-width: medium;
+    border-radius: 2px;
+}
+
+#neko3{
+	line-height: 500px;
+	border-style: solid;
+	display: block;
+	margin-top:5px;
+	position: relative;
+	width:100%;
+	border-color: rgb(218, 184, 142);
+	border-top-width: thin;
+    border-bottom-width: thick;
+    border-left-width: 10px;
+    border-right-width: medium;
+    border-radius: 2px;
+}
+
+#hii{
+	text-decoration-line : none;
+}
+
+#byee{
+	text-decoration-line : none;
+}
+
+.neko_1{
+	display: inline-block;
+	border-color: rgb(218, 184, 142);
+	border-style: solid;
+	border-top-width: thin;
+    border-bottom-width: thick;
+    border-left-width: 10px;
+    border-right-width: medium;
+    border-radius: 2px;
+}
+
+.neko_2{
+	display: inline-block;
+	border-color: rgb(218, 184, 142);
+	border-style: solid;
+	border-top-width: thin;
+    border-bottom-width: thick;
+    border-left-width: 10px;
+    border-right-width: medium;
+    border-radius: 2px;
+
+}
+
+.neko_3{
+	display: inline-block;
+	border-color: rgb(218, 184, 142);
+	border-style: solid;
+	border-top-width: thin;
+    border-bottom-width: thick;
+    border-left-width: 10px;
+    border-right-width: medium;
+    border-radius: 2px;
+}
+
+.board_text{
+	text-align: center;
+	display: block;
+	line-height: 30px;
+}
+
+.nav-item {
+	text-decoration: none;
+}
+
+.snowflake {
+    color: rgb(204, 214, 68);
+    font-size: 1em;
+    font-family: Arial;
+    text-shadow: 0 0 1px #000;
+}
+
+@-webkit-keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@-webkit-keyframes snowflakes-shake{0%{-webkit-transform:translateX(0px);transform:translateX(0px)}50%{-webkit-transform:translateX(80px);transform:translateX(80px)}100%{-webkit-transform:translateX(0px);transform:translateX(0px)}}@keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@keyframes snowflakes-shake{0%{transform:translateX(0px)}50%{transform:translateX(80px)}100%{transform:translateX(0px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default;-webkit-animation-name:snowflakes-fall,snowflakes-shake;-webkit-animation-duration:10s,3s;-webkit-animation-timing-function:linear,ease-in-out;-webkit-animation-iteration-count:infinite,infinite;-webkit-animation-play-state:running,running;animation-name:snowflakes-fall,snowflakes-shake;animation-duration:10s,3s;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite;animation-play-state:running,running}.snowflake:nth-of-type(0){left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s}.snowflake:nth-of-type(1){left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s}.snowflake:nth-of-type(2){left:20%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s}.snowflake:nth-of-type(3){left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s}.snowflake:nth-of-type(4){left:40%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s}.snowflake:nth-of-type(5){left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s}.snowflake:nth-of-type(6){left:60%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s}.snowflake:nth-of-type(7){left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s}.snowflake:nth-of-type(8){left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}
+
+.navbar-nav {
+	display: flex;
+}
+
+.title_1 {
+	position: relative;
+	width: 100%; /* 화면 크기와 동일하게 맞춰준다. 전체크기를 */
+	height: 50px; /* 높이 고정 */
+	overflow: hidden;
+	display: inline-block;
+	border-top-width: thin;
+    border-bottom-width: thick;
+    border-left-width: 10px;
+    border-right-width: medium;
+    border-radius: 2px;
+	border-color: rgb(218, 184, 142);
+	border-style: solid;
+}
+
+.contents_1 {
+	position: relative;
+	width: 100%;
+	height: 550px;
+	overflow: hidden;
+	display: inline-block;
+	border-top-width: thin;
+    border-bottom-width: thick;
+    border-left-width: 10px;
+    border-right-width: medium;
+    border-radius: 2px;
+	border-color: rgb(218, 184, 142);
+	border-style: solid;
+}
+
+/* .insert_board1 {
+	line-height: 30%;
+}
+
+.insert_board2 {
+	line-height: 70%;
+} */
+
+.button_i {
+	display: flex;
+	border: solid;
+	border-color: beige;
+	text-decoration-line: none;
+}

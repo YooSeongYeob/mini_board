@@ -56,17 +56,11 @@
 
  <nav class="navbar navbar-expand-lg bg-light">
 
-  <div class="container-fluid">
+  <div class="container-fluid" id="text_nav">
     <a class="navbar-brand" href="#">LOST ARK</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-	
-	<p class="ppp"> 
-	<button type="button"><a href="board_insert.php">게시글 작성<button>	
-	</p>
-
-
     <div class="collapse navbar-collapse" class= "nav-items" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
@@ -82,20 +76,30 @@
           <a class="nav-link active"  href="#">질문과 답변</a>
         </li>
       </ul>
+	  <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">검색</button>
+      </form>
     </div>
- </div>  
+		
 
+			<div class="button_i">
+			<a href="board_insert.php" class="button_a_b radius-right radius-left">게시글 작성</a>
+			</div>
+ </div> 
 </nav> 
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 	
-	<div class="p-3 mb-2 bg-success text-white">
-		<table class='table table-striped'>
+	<div class="p-3 mb-2 bg-warning text-dark" id="text_board">
+		<table  class="table table-sm">
+			
 			<thead>
 				<tr>
-					<th  class="text-bg-dark p-3">게시글 번호</th>
-					<th  class="text-bg-dark p-3">게시글 제목</th>
-					<th  class="text-bg-dark p-3">작성일자</th>
+					<th  class="p-3 mb-2 bg-light text-dark">게시글 번호</th>
+					<th  class="p-3 mb-2 bg-light text-dark">게시글 제목</th>
+					<th  class="p-3 mb-2 bg-light text-dark">작성일자</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -121,11 +125,19 @@
 			for( $i = 1; $i <= $max_page_num; $i++ )
 			{
 		?>
-				<a href='board_list.php?page_num=<?php echo $i ?>' class='btn btn-outline-warning'><?php echo $i ?></a>
+				<a href='board_list.php?page_num=<?php echo $i ?>' type="button" class='btn btn-outline-warning'><?php echo $i ?></a>
 		<?php
 			}
 		?>
-</div>
 
+	<?php 
+		for($i = 0; $i < 9 ; $i++)
+		{
+	?>
+			<div class="snowflake">♥</div>
+	<?php
+		}
+	?>
+</div>
 </body>
 </html>

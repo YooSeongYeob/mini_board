@@ -54,22 +54,25 @@
 <body>
 <?php include_once( URL_HEADER ); ?>
 	<form method="post" action="board_update.php">
-		<label class="p-3 mb-2 bg-success text-white"  for="bno">게시글 번호 : </label>
-		<input type="text" name="board_no" id="bno" value="<?php echo $result_info["board_no"] ?>" readonly>
+		<div class="board_text">
+		<label class="neko_1" class="p-3 mb-2 bg-success text-white"  for="bno" >게시글 번호 </label>
+		<input id="neko" type="text" name="board_no" id="bno" value="<?php echo $result_info["board_no"] ?>" readonly>
 		<br>
-		<label class="p-3 mb-2 bg-success text-white"  for="title">게시글 제목 : </label>
-		<input type="text" name="board_title" id="title" value="<?php echo $result_info["board_title"] ?>">
+		<label class="neko_2" class="p-3 mb-2 bg-success text-white"  for="title" >게시글 제목 수정</label>
+		<input id="neko2" type="text" name="board_title" id="title" value="<?php echo $result_info["board_title"] ?>">
 		<br>
-		<label class="p-3 mb-2 bg-success text-white"  for="contents">게시글 내용 : </label>
-		<input type="text" name="board_contents" id="contents" value="<?php echo $result_info["board_contents"] ?>">
+		<label class="neko_3" class="p-3 mb-2 bg-success text-white"  for="contents" >게시글 내용 수정</label>
+		<input id="neko3" type="text" name="board_contents" id="contents" value="<?php echo $result_info["board_contents"] ?>">
 		<br>
-		<button type="submit" class="p-3 mb-2 bg-light text-dark">수정</button>
-		<button type="button" class="p-3 mb-2 bg-light text-dark"><a href= "board_detail.php?board_no=<?php echo $result_info["board_no"] ?>">
-		취소
+		<button type="submit" class="btn btn-outline-warning">수정 완료</button>
+		<button id="byee" type="button" class="btn btn-outline-warning"><a href= "board_detail.php?board_no=<?php echo $result_info["board_no"] ?>">
+			취소
 		</a>
 		</button>
+	</div>
 	</form>
-	<button type="button" class="p-3 mb-2 bg-light text-dark"><a href= "board_list.php">목록</a></button>
+	
+	<button type="button" class="btn btn-outline-warning"><a href= "board_list.php" id="hii">목록</a></button>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
 </html>
